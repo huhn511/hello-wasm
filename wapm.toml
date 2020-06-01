@@ -1,0 +1,17 @@
+[package]
+name = "huhn/hello-wasm"
+version = "0.0.3"
+description = "hello world example with wasm and wapm"
+license = "ISC"
+
+[dependencies]
+"huhn/hello-wasm" = "0.0.1"
+
+[[module]]
+name = "hello_wasm"
+source = "./target/wasm32-wasi/release/main.wasm"
+abi = "wasi"
+
+[[command]]
+name = "greet"
+module = "hello_wasm"
